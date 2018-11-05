@@ -1,4 +1,4 @@
-//Write a program to enter two numbers and do comparisons of them. If first one is greater than find out division of two numbers else find out multiplication of two numbers
+//Write a program to print wheter entered number is even or odd using ternary operator
 
 #include "pch.h"
 #include <iostream>
@@ -6,16 +6,17 @@
 using namespace std;
 int main()
 {
-	int n1 = 0, n2 = 0, res = 0;
-	cout << "Enter the first number:\n";
-	cin >> n1;
-	cout << "Enter the second number:\n";
-	cin >> n2;
-	if (n1 > n2) {
-		res = n1 / n2;
+	int n = 0;
+	bool ev = false;
+	cout << "Enter the number:\n";
+	cin >> n;
+	
+	ev = (n % 2 == 0) ? true : false;
+
+	if (ev) {
+		cout << "The number is even" << endl;
 	}
 	else {
-		res = n1 * n2;
+		cout << "The number is odd" << endl;
 	}
-	cout << "Result is " << res;
 }
