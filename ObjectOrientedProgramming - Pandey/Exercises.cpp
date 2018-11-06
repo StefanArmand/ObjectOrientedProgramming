@@ -1,4 +1,4 @@
-//Write a program to multiply two floating point numbers and print the product as a double in exponential notation
+//Write a program to complement the bits starting from R and ending at S, of a given number and print the value of the manipulated number in binary, octal and hexadecimal form.
 
 #include "pch.h"
 #include <iostream>
@@ -6,28 +6,16 @@
 using namespace std;
 int main()
 {
-	double x = 0;
-	double y = 0;
-	double result = 0;
-	double temp = 0;
-	int exponent = 0;
-	cout << "Enter the x:\n";
-	cin >> x;
-	cout << "Enter the y:\n";
-	cin >> y;
-	
-	result = x * y;
-	while (result > 1) {
-		temp = result / 10;
-		result = temp;
-		exponent++;
-	}
+	char c = 'R';
+	//char s = 'S';
 
-	if (exponent == 2) {
-		cout << "The result is: " << result << " times e to the " << exponent << "'nd power" << endl;
-	}
-	else {
-		cout << "The result is: " << result << " times e to the " << exponent << "'th power" << endl;
-	}
+	unsigned short y = 0;
 
+	while (c <= 'S') {
+		y = ~c;
+		cout << "The complement number of "<< c << " in binary is: " << y << endl;
+		cout << "The complement number of " << c << " in octal is: " << oct << y << endl;
+		cout << "The complement number of " << c << " in hexadecimal is: " << hex << y << endl;
+		c++;
+	}
 }
