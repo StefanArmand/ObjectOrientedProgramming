@@ -1,4 +1,4 @@
-//Write a program to evaluate the expression 2x+3y - 10. Value for x and y should be taken from the user side
+//Write a program to multiply two floating point numbers and print the product as a double in exponential notation
 
 #include "pch.h"
 #include <iostream>
@@ -6,16 +6,28 @@
 using namespace std;
 int main()
 {
-	int x = 0;
-	int y = 0;
-	int result = 0;
+	double x = 0;
+	double y = 0;
+	double result = 0;
+	double temp = 0;
+	int exponent = 0;
 	cout << "Enter the x:\n";
 	cin >> x;
 	cout << "Enter the y:\n";
 	cin >> y;
 	
-	result = 2 * x + 3 * y - 10;
-	
-	cout << "The result is: " << result << endl;
+	result = x * y;
+	while (result > 1) {
+		temp = result / 10;
+		result = temp;
+		exponent++;
+	}
+
+	if (exponent == 2) {
+		cout << "The result is: " << result << " times e to the " << exponent << "'nd power" << endl;
+	}
+	else {
+		cout << "The result is: " << result << " times e to the " << exponent << "'th power" << endl;
+	}
 
 }
