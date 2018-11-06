@@ -1,4 +1,4 @@
-//Write a program to enter two numbers and find the smallest of them. Use conditional operator.
+//Write a program to shift the entered number by three bits right and display the result
 
 #include "pch.h"
 #include <iostream>
@@ -8,20 +8,11 @@ using namespace std;
 int main()
 {
 	int a = 0;
-	int b = 0;
-	int result = 0;
-	
-	cout << "Enter the first number: \n";
+	int shifted = 0;
+	cout << "Enter the number: \n";
 	cin >> a;
-	cout << "Enter the second number: \n";
-	cin >> b;
 
-	result = (a < b) ? 1 : 0;
+	shifted = a >> 3;
 
-	if (result == 1) {
-		cout << "The number " << a << " smaller than " << b << endl;
-	}
-	else {
-		cout << "The number " << b << " smaller than " << a << endl;
-	}
+		cout << "The number " << a << " shifted right by three is " << shifted << endl;
 }
