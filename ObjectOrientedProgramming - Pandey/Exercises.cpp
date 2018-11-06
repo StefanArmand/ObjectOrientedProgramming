@@ -1,4 +1,4 @@
-//Write a program to shift a number 4 bits by storing bits to another number. The program should print out the values of the number formed by shfted bits, in decimal and binary forms
+//Write a program to enter two numbers and find the smallest of them. Use conditional operator.
 
 #include "pch.h"
 #include <iostream>
@@ -9,11 +9,19 @@ int main()
 {
 	int a = 0;
 	int b = 0;
+	int result = 0;
 	
-	cout << "Enter the binary number: \n";
+	cout << "Enter the first number: \n";
 	cin >> a;
+	cout << "Enter the second number: \n";
+	cin >> b;
 
-	b = a << 4;
+	result = (a < b) ? 1 : 0;
 
-	cout << "The number " << b << " in binary form is " << std::bitset<8>(b) << endl;
+	if (result == 1) {
+		cout << "The number " << a << " smaller than " << b << endl;
+	}
+	else {
+		cout << "The number " << b << " smaller than " << a << endl;
+	}
 }
