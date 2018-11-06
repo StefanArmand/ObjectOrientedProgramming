@@ -1,4 +1,4 @@
-//Write a program to print wheter entered number is even or odd using ternary operator
+//Write a program to evaluate the expression 2x+3y - 10. Value for x and y should be taken from the user side
 
 #include "pch.h"
 #include <iostream>
@@ -6,17 +6,16 @@
 using namespace std;
 int main()
 {
-	int n = 0;
-	bool ev = false;
-	cout << "Enter the number:\n";
-	cin >> n;
+	int x = 0;
+	int y = 0;
+	int result = 0;
+	cout << "Enter the x:\n";
+	cin >> x;
+	cout << "Enter the y:\n";
+	cin >> y;
 	
-	ev = (n % 2 == 0) ? true : false;
+	result = 2 * x + 3 * y - 10;
+	
+	cout << "The result is: " << result << endl;
 
-	if (ev) {
-		cout << "The number is even" << endl;
-	}
-	else {
-		cout << "The number is odd" << endl;
-	}
 }
