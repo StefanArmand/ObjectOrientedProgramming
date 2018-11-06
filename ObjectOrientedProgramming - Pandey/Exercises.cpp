@@ -1,21 +1,19 @@
-//Write a program to complement the bits starting from R and ending at S, of a given number and print the value of the manipulated number in binary, octal and hexadecimal form.
+//Write a program to shift a number 4 bits by storing bits to another number. The program should print out the values of the number formed by shfted bits, in decimal and binary forms
 
 #include "pch.h"
 #include <iostream>
+#include <bitset>
 
 using namespace std;
 int main()
 {
-	char c = 'R';
-	//char s = 'S';
+	int a = 0;
+	int b = 0;
+	
+	cout << "Enter the binary number: \n";
+	cin >> a;
 
-	unsigned short y = 0;
+	b = a << 4;
 
-	while (c <= 'S') {
-		y = ~c;
-		cout << "The complement number of "<< c << " in binary is: " << y << endl;
-		cout << "The complement number of " << c << " in octal is: " << oct << y << endl;
-		cout << "The complement number of " << c << " in hexadecimal is: " << hex << y << endl;
-		c++;
-	}
+	cout << "The number " << b << " in binary form is " << std::bitset<8>(b) << endl;
 }
