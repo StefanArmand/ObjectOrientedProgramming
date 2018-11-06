@@ -1,4 +1,4 @@
-//Write a program to shift the entered number by three bits right and display the result
+//Write a program to shift the entered number by three bits left and display the result
 
 #include "pch.h"
 #include <iostream>
@@ -12,7 +12,7 @@ int main()
 	cout << "Enter the number: \n";
 	cin >> a;
 
-	shifted = a >> 3;
+	shifted = a << 3;
 
-		cout << "The number " << a << " shifted right by three is " << shifted << endl;
+		cout << "The number " << a << " shifted left by three is " << shifted << endl;
 }
