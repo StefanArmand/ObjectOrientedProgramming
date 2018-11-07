@@ -1,34 +1,38 @@
-//Write a program to check whether a triangle is right angled or not
+//Write a program to check whether a number is divisible by 2, 3, 4, 5 and 6
 #include "pch.h"
 #include <iostream>
 
 using namespace std;
 int main()
 {
-	int s1 = 0;
-	int s2 = 0;
-	int s3 = 0;
+	int n = 0;
+	int primecheck = 0;
 
-	cout << "Enter the first side: \n";
-	cin >> s1;
-
-	cout << "Enter the second side: \n";
-	cin >> s2;
-
-	cout << "Enter the third side: \n";
-	cin >> s3;
+	cout << "Enter the number: \n";
+	cin >> n;
 
 	
-	if (s1*s1 + s2*s2 == s3*s3) {
-		cout << "The triangle is right angled \n";
+	if (n % 2 == 0) {
+		cout << "The number is divisible by 2 \n";
+		primecheck++;
 	}
-	else if (s3*s3 + s2 * s2 == s1 * s1) {
-		cout << "The triangle is right angled \n";
+	if (n % 3 == 0) {
+		cout << "The number is divisible by 3 \n";
+		primecheck++;
 	}
-	else if (s1*s1 + s3 * s3 == s2 * s2) {
-		cout << "The triangle is right angled \n";
+	if (n % 4 == 0) {
+		cout << "The number is divisible by 4 \n";
+		primecheck++;
 	}
-	else {
-		cout << "The triangle is not right angled \n";
-	}	
+	if (n % 5 == 0) {
+		cout << "The number is divisible by 5 \n";
+		primecheck++;
+	}
+	if (n % 6 == 0) {
+		cout << "The number is divisible by 6 \n";
+		primecheck++;
+	}
+	if (primecheck == 0) {
+		cout << "The number is prime \n";
+	}
 }
