@@ -1,6 +1,7 @@
-//Write a program to calculate the amount of the bill for the following jobs
-// a. Scanning and hardcopy of a passport photo 5$
-// b. Scanning and hardcopies (more than 10) 3$
+//Write a program to calculate the bill of Internet Browsing. The conditions are given below:
+// 1 hour - 20$
+// 1/2 hours - 15$
+// 5 hours - 90$
 
 #include "pch.h"
 #include <iostream>
@@ -8,19 +9,19 @@
 using namespace std;
 int main()
 {
-	int n = 0;
-	int totaltopay = 0;
-	cout << "Write the number of passports: \n";
+	float n = 0;
+	float totaltopay = 0;
+	cout << "Write the number of hours: \n";
 	cin >> n;
 
-	if (n < 10 && n > 0 ) {
-		totaltopay  = n*5;
+	if (n <= 1.0f && n > 0.5f || n > 0.5f && n < 5.0f) {
+		totaltopay = 20 * n;
 	}
-	else if (n >= 10) {
-		totaltopay = n*3;
+	else if (n <= 0.5f) {
+		totaltopay = 30 * n;
 	}
-	else if (n <= 0){
-		cout << "n must be positive" << endl;
+	else if (n == 5) {
+		totaltopay = 90;
 	}
 
 	cout << "The total to pay is " << totaltopay << endl;
