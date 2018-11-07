@@ -1,4 +1,4 @@
-//Write a program to calculate the sum of remainders obtained by dividing with modular division operations by 2 on 1 to 9 numbers
+//Dinner for six guests, but your table has 4 places. 6 * 5 * 4 * 3 = 360.  Show number of arrangements posible for any number of guests or chairs
 
 #include "pch.h"
 #include <iostream>
@@ -6,16 +6,18 @@
 using namespace std;
 int main()
 {
-	int n = 0;
-	int sum = 0;
-	//cout << "Write the number of hours: \n";
-	//cin >> n;
+	int nguests = 0;
+	int nchairs = 0;
+	double total = 1;
+	cout << "Write the number of guests: \n";
+	cin >> nguests;
+	cout << "Write the number of chairs: \n";
+	cin >> nchairs;
 
-	for (int i = 1; i < 10; i++) {
-		int tmp = 0;
-		tmp = i % 2;
-		sum += tmp;
+	for (int i = 0; i < nchairs; i++) {	
+		total *= nguests;
+		nguests--;
 	}
 
-	cout << "The total is " << sum << endl;
+	cout << "The total of arangements possible is " << total << endl;
 }
