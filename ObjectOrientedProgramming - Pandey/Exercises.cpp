@@ -1,38 +1,51 @@
-//Write a program to check whether a number is divisible by 2, 3, 4, 5 and 6
+//Write a program to find out largest of 10 numbers using if and goto only
 #include "pch.h"
 #include <iostream>
 
 using namespace std;
 int main()
 {
-	int n = 0;
-	int primecheck = 0;
+	int n[10] = {32, 42, 32, 12, 32, 21, 11, 27, 32, 42};
+	int largest = 0;
+	bool first = true;
 
-	cout << "Enter the number: \n";
-	cin >> n;
+	/*cout << "Enter 10 numbers: \n";
+	for (int i = 0; i < 10; i++) {
+		cin >> n[i];
+	}*/
 
-	
-	if (n % 2 == 0) {
-		cout << "The number is divisible by 2 \n";
-		primecheck++;
+	int c = 0;
+	while (c < 10) {
+		if (first) {
+			first = false;
+			c++;
+			continue;
+		}
+		if (largest != 0) {
+			goto complargest;
+		}
+		if (n[c + 1] > n[c]) {
+			largest = n[c + 1];
+			c++;
+			continue;
+		}
+		else {
+			largest = n[c];
+			c++;
+			continue;
+		}
+
+	complargest:
+		if (largest > n[c]) {
+			c++;
+			continue;
+		}
+		else {
+			largest = n[c];
+			c++;
+			continue;
+		}
 	}
-	if (n % 3 == 0) {
-		cout << "The number is divisible by 3 \n";
-		primecheck++;
-	}
-	if (n % 4 == 0) {
-		cout << "The number is divisible by 4 \n";
-		primecheck++;
-	}
-	if (n % 5 == 0) {
-		cout << "The number is divisible by 5 \n";
-		primecheck++;
-	}
-	if (n % 6 == 0) {
-		cout << "The number is divisible by 6 \n";
-		primecheck++;
-	}
-	if (primecheck == 0) {
-		cout << "The number is prime \n";
-	}
+
+	cout << "Largest number is: " << largest << endl;
 }
