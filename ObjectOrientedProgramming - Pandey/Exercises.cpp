@@ -1,5 +1,4 @@
-//Write a program to check whether a triangle can be formed with three positive integers supplied
-
+//Write a program to check whether a triangle is right angled or not
 #include "pch.h"
 #include <iostream>
 
@@ -20,16 +19,16 @@ int main()
 	cin >> s3;
 
 	
-	if (s1 + s2 <= s3) {
-		cout << "The triangle can't be formed \n";
+	if (s1*s1 + s2*s2 == s3*s3) {
+		cout << "The triangle is right angled \n";
 	}
-	else if (s1 + s3 <= s2) {
-		cout << "The triangle can't be formed \n";
+	else if (s3*s3 + s2 * s2 == s1 * s1) {
+		cout << "The triangle is right angled \n";
 	}
-	else if (s2 + s3 <= s1) {
-		cout << "The triangle can't be formed \n";
+	else if (s1*s1 + s3 * s3 == s2 * s2) {
+		cout << "The triangle is right angled \n";
 	}
 	else {
-		cout << "The triangle can be formed \n";
+		cout << "The triangle is not right angled \n";
 	}	
 }
