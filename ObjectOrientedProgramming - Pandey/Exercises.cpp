@@ -1,27 +1,23 @@
-//Write a program to return more than one value from function using reference variable
+//Write a C++ program to arrange a list of names in ascending order using an array of pointers to strings.
 
 #include "pch.h"
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
-int func(int x, int *y, int *z);
+bool wayToSort(string i, string j) { return i < j; }
 
 int main()
 {
-	int x = 0;
-	int y = 0;
-	int z = 0;
-	cout << "Please write a value " << endl;
-	cin >> x;
+	vector<string> str = { "John", "Tommy", "Victor", "Claire"};
 
-	func(x, &y, &z);
 
-	cout << "The value " << x <<" is changed into: " << y << " and into : " << z << endl;
-}
-
-int func(int x, int *y, int *z) {
-	*y = x * 2;
-	*z = x * 3;
-	return 0;
+	sort(str.begin(), str.end(), wayToSort);
+	cout << "Sorted strings look like this: " << endl;
+	for (string i : str) {
+		cout << i << " " << endl;
+	}
 }
