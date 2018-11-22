@@ -1,22 +1,36 @@
-//Write a C++ program to find the area and perimeter of a circle using pointers
+//Write a program to accept a float number through the keyboard. Calculate the square of the
+//number.Separate the float number into integer and fractional part.Individually calculate the
+//square of an integer and fractional part and add them in another variable.Compare the two
+//squares obtained.
 
 #include "pch.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-int AreaPerim(int r, double *area, double *perimeter) {
-	*area = 3.14 * r * r;
-	*perimeter = 2 * 3.14* r;
-	return 0;
-}
-
 int main()
 {
-	double area = 0;
-	double perimeter = 0;
-	int r = 5;
+	float fl = 0.0f;
+	float sqfl = 0.0f;
+	double sqfract = 0;
+	int sqint = 0;
+	int intfl = 0;
+	double fractpart;
+	double intpart;
+	double sqtotal = 0;
 
-	AreaPerim(r, &area, &perimeter);
-	cout << "The area of the circle is: " << area << " and the perimeter is: " << perimeter << endl;
+	cout << "Please enter a float: " << endl;
+	cin >> fl;
+
+	sqfl = fl * fl;
+
+	fractpart = modf(fl, &intpart);
+
+	sqfract = fractpart * fractpart;
+	sqint = intpart * intpart;
+	sqtotal = sqfract + sqint;
+
+
+	cout << "The square of the float is: " << sqfl << " and the square of the fractpart + intpart is: " << sqtotal << endl;
 }
