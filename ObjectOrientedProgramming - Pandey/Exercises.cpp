@@ -1,4 +1,4 @@
-//Write a program to find kth element into an array of strings i.e. string whose length is maximum
+//Write a function to find power of a given number like pow ( ) function.
 
 #include "pch.h"
 #include <iostream>
@@ -6,21 +6,25 @@
 
 using namespace std;
 
+int power(int base, int exponent) {
+	int res = 1;
+	for (int i = 0; i < exponent; i++) {
+		int temp = res * base;
+		res = temp;
+	}
+	return res;
+}
 
 int main()
 {
-	const char* strlist[4] = { "first", "frist", "jimcond", "third" };
-	char c = ' ';
-	cout << "Enter the character to be compared: " << endl;
-	cin >> c;
 
-	for (int i = 0; i < 4; i++) {
-		int max = 0;
-		max = strlen(strlist[i]);
-		for (int j = 0; j < max; j++) {
-			if (c == strlist[i][j]) {
-				cout << "Char found in " << strlist[i] << " and its the " << max << "th element\n";
-			}
-		}
-	}
+	int base = 0;
+	int exponent = 0;
+	cout << "Enter the number to be raised " << endl;
+	cin >> base;
+	cout << "To what power? " << endl;
+	cin >> exponent;
+
+	cout<< "The result is: " << power(base, exponent) << endl;
+	
 }
