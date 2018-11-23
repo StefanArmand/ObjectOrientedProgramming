@@ -1,30 +1,31 @@
-//Write a function to find power of a given number like pow ( ) function.
+//Write a program using function to round up and round down the floating point number.
 
 #include "pch.h"
 #include <iostream>
-#include <string>
+#include <cmath>
 
 using namespace std;
 
-int power(int base, int exponent) {
-	int res = 1;
-	for (int i = 0; i < exponent; i++) {
-		int temp = res * base;
-		res = temp;
+int roundfloat(float fl){
+	int res = fl;
+	float remainder = trunc(fl);
+	float decimal = fl - remainder;
+	if (decimal <= 0.5f) {
+		return res;
 	}
-	return res;
+	if (decimal > 0.5f) {
+		return res + 1;
+	}
 }
 
 int main()
 {
 
-	int base = 0;
-	int exponent = 0;
-	cout << "Enter the number to be raised " << endl;
-	cin >> base;
-	cout << "To what power? " << endl;
-	cin >> exponent;
+	float fl = 0.0f;
+	
+	cout << "Enter the float to modify into integer: " << endl;
+	cin >> fl;
 
-	cout<< "The result is: " << power(base, exponent) << endl;
+	cout<< "The result integer of the float is: " << roundfloat(fl) << endl;
 	
 }
