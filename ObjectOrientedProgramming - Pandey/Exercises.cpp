@@ -1,4 +1,4 @@
-//Write a program to list all the strings whose initials starts with a given input character using function and pointer
+//Write a program to find kth element into an array of strings i.e. string whose length is maximum
 
 #include "pch.h"
 #include <iostream>
@@ -15,10 +15,12 @@ int main()
 	cin >> c;
 
 	for (int i = 0; i < 4; i++) {
-		
-		char firstlet = strlist[i][0];
-		if (c == firstlet) {
-			cout << strlist[i] << endl;
+		int max = 0;
+		max = strlen(strlist[i]);
+		for (int j = 0; j < max; j++) {
+			if (c == strlist[i][j]) {
+				cout << "Char found in " << strlist[i] << " and its the " << max << "th element\n";
+			}
 		}
 	}
 }
