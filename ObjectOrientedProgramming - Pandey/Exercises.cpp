@@ -1,4 +1,5 @@
-// Write a function called zeroSmaller( ) that is passed two int arguments by reference and then sets the smaller of the two numbers to 0. Write a main() program to exercise this function.
+// Write a function that takes two Distance values as arguments and returns the larger one. Include a main() program that accepts two Distance values from the user, compares them, and displays
+// the larger.
 
 #include "pch.h"
 #include <iostream>
@@ -8,25 +9,22 @@ using namespace std;
 
 int a = 0;
 
-int zeroSmaller(int* n, int* p) {
-	if (*n < *p) {
-		*n = 0;
+int compDistance(int n, int p) {
+	if (n < p) {
+		return p;
 	}
-	else if (*p < *n) {
-		*p = 0;
+	else if (p < n) {
+		return n;
 	}
-	return 0;
 }
 
 int main()
 {
 	int a, b;
-	cout << "Please enter the first number:\n";
+	cout << "Please enter the first distance:\n";
 	cin >> a;
-	cout << "Please enter the second number:\n";
+	cout << "Please enter the second distance:\n";
 	cin >> b;
-	
-	zeroSmaller(&a, &b);
 
-	cout << "The smaller number is now zero: " << a << "    " << b << endl;
+	cout << "The bigger distance is: " << compDistance(a, b) << endl;
 }
