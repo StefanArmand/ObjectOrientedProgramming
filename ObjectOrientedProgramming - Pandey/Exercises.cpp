@@ -1,5 +1,4 @@
-// Write a function called swap() that interchanges two int values passed to it by the calling program. (Note that this function swaps the values of the variables in the calling program, not
-//	those in the function) You will need to decide how to pass the arguments.Create a main() program to exercise the function.
+// Write a function called zeroSmaller( ) that is passed two int arguments by reference and then sets the smaller of the two numbers to 0. Write a main() program to exercise this function.
 
 #include "pch.h"
 #include <iostream>
@@ -7,27 +6,27 @@
 
 using namespace std;
 
-int swap(int* a, int* b) {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+int a = 0;
+
+int zeroSmaller(int* n, int* p) {
+	if (*n < *p) {
+		*n = 0;
+	}
+	else if (*p < *n) {
+		*p = 0;
+	}
 	return 0;
 }
 
 int main()
 {
-	int a = 0;
-	int b = 0;
-	
-	cout << "Enter the first int to swap: " << endl;
+	int a, b;
+	cout << "Please enter the first number:\n";
 	cin >> a;
-	cout << "Enter the second int to swap: " << endl;
+	cout << "Please enter the second number:\n";
 	cin >> b;
-
-	cout << "Before the swap the numbers are: " << a << " and " << b << endl;
-
-	swap(a, b);
-
-	cout<< "The result of the swap is: " << a << " and " << b << endl;
 	
+	zeroSmaller(&a, &b);
+
+	cout << "The smaller number is now zero: " << a << "    " << b << endl;
 }
