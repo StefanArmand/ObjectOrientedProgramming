@@ -1,49 +1,35 @@
-// Create a class that imitates part of the functionality of the basic data type int. Call the class Int (not different spelling).The only data in this class is an int variable.Include member functions 
-// to initialize an Int to 0, to initialize it to an int value, to display it(it looks just like an int), and to add two Int values.
-// Write a program that exercise this class by creating two initialized and one uninitialized Int values, adding these two initialized values ad placing the response in the uninitalized value, and
-// then displaying this result.
+// Create a class that includes a data member that holds a “serial number” for each object created from the class.That is, the first object created will be numbered 1, the second 2 and so on.
+// To do this, you will need another data member that records a count of how many object have been created so far. (This member should apply to the class as a whole; not to individual objects.What
+//	keyword specifies this ? ) Then, as each object is created, its constructor can examine this count 	member variable to determine the appropriate serial number for the new object.
+//	Add a member function that permits an object to report its own serial number.Then write a main () program that creates three objects and quires each one about its serial number.They should
+//	respond I am object number 2, and so on.
 
 #include "pch.h"
 #include <iostream>
 
 using namespace std;
 
-class Int
+class Serial
 {
 
-	int a = 0; 
+	static int serNumb; 
 
 
 public:
 
-	void initialize() {
-		a = 0;
-	}
-
-	int initializeValue(int x) {
-		a = x;
-		return a;
-	}
-
-	void display(int x) {
-		a = x;
-		cout << " The value is: " << a << endl;
-	}
-
-	int addints(int x, int y) {
-		return x + y;
+	void called() {
+		serNumb++;
+		cout << "I am object number " << serNumb << endl;
 	}
 	
 };
 
+int Serial::serNumb;
+
 int main()
 {
-	Int a;
-	Int b;
-	Int c;
-	a.initialize();
-	b.initializeValue(6);
-	c.initializeValue(9);
-	a.addints(b.initializeValue(6), c.initializeValue(9));
-	a.display(a.addints(b.initializeValue(6), c.initializeValue(9)));
+	Serial s1, s2, s3;
+	s1.called();
+	s2.called();
+	s3.called();
 }
