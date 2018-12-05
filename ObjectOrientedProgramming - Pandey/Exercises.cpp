@@ -1,37 +1,49 @@
-// Write a program to declare a class with two integers. Read values using member functions. Pass the object to another member function.Display the difference between them.
+// Create a class that imitates part of the functionality of the basic data type int. Call the class Int (not different spelling).The only data in this class is an int variable.Include member functions 
+// to initialize an Int to 0, to initialize it to an int value, to display it(it looks just like an int), and to add two Int values.
+// Write a program that exercise this class by creating two initialized and one uninitialized Int values, adding these two initialized values ad placing the response in the uninitalized value, and
+// then displaying this result.
 
 #include "pch.h"
 #include <iostream>
-#include <string.h>
 
 using namespace std;
 
-class first
+class Int
 {
 
 	int a = 0; 
-	int b = 0;
 
 
 public:
 
-	void input(int x, int y) {
+	void initialize() {
+		a = 0;
+	}
+
+	int initializeValue(int x) {
 		a = x;
-		b = y;
+		return a;
 	}
 
-	int difference() {
-		return a - b;
+	void display(int x) {
+		a = x;
+		cout << " The value is: " << a << endl;
 	}
 
+	int addints(int x, int y) {
+		return x + y;
+	}
 	
 };
 
 int main()
 {
-	first a;
-	a.input(15, 4);
-	cout << "The difference between the numbers is: " << a.difference() << endl;
-
-
+	Int a;
+	Int b;
+	Int c;
+	a.initialize();
+	b.initializeValue(6);
+	c.initializeValue(9);
+	a.addints(b.initializeValue(6), c.initializeValue(9));
+	a.display(a.addints(b.initializeValue(6), c.initializeValue(9)));
 }
