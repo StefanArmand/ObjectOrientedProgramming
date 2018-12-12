@@ -1,33 +1,43 @@
-// Write C++ program to overload a function named power() to allow the calculation of power of both ‘int’ and ‘float’ value.
-
+// Write a program to declare two classes Eur and Dollar. Declare objects of both the classes and perform conversion between Rupees and Dollar using any of the conversion method.
 #include "pch.h"
 #include <iostream>
 
 using namespace std;
-class power
+class Eur
 {
-	int pow;
+	double sum;
 public:
-	power(int x)
+	Eur(int x)
 	{
-		pow = x*x;
-		show();
-	}
-
-	power(float x) {
-		pow = x * x;
+		sum = x* 1.13;
 		show();
 	}
 
 	void show()
 	{
-		cout << "squared = " << pow << endl;
+		cout << "Eur to dollars = " << sum << endl;
 	}
 };
-void main()
+class USD
 {
-	float num;
+	double sum;
+public:
+	USD(int x)
+	{
+		sum = x * 0.88;
+		show();
+	}
+
+	void show()
+	{
+		cout << "USD to euro = " << sum << endl;
+	}
+};
+int main()
+{
+	int num;
 	cout << "Enter the num" << endl;
 	cin >> num;
-	power d = num;
+	Eur d = num;
+	USD d1 = num;
 }
