@@ -1,44 +1,32 @@
-//Declare a class Vehicle. From this class derived two_wheeler, three_wheeler and four_wheeler class.Display properties of each type of vehicle using member function of the class.
+//Write a program to declare classes A, B and C. Each class contains one char array as a data member.Apply multiple inheritances.Concatenate strings of class A and B and store it in class C.
 
 #include "pch.h"
 #include <iostream>
-
+#include <string.h>
 using namespace std;
-class Vehicle
+class A
 {
-
+protected:
+	char astr[40] = "stringfromA";
 };
-class two_wheeler :public Vehicle
+class B
+{
+protected:
+	char bstr[20] = "stringfromB";
+};
+class C : public A, public B
 {
 public:
-	void twowheel_show()
+	void concatanete_string()
 	{
-		cout << "This is a two wheeler" << endl;
-	}
-};
-class three_wheeler : public Vehicle
-{
-public:
-	void threewheel_show()
-	{
-		cout << "This is a three wheeler" << endl;
-	}
-};
-class four_wheeler : public Vehicle
-{
-public:
-	void fourwheel_show()
-	{
-		cout << "This is a four wheeler" << endl;
+		strcat_s(astr, bstr);
+		cout << "These are the strings concatenated: " << astr << endl;
 	}
 };
 
-void main()
+
+int main()
 {
-	two_wheeler o1;
-	o1.twowheel_show();
-	three_wheeler o2;
-	o2.threewheel_show();
-	four_wheeler o3;
-	o3.fourwheel_show();
+	C o1;
+	o1.concatanete_string();
 }
